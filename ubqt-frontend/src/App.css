@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Emblema+One&display=swap');
+/*
+:root {
+  --cold: #afc2d5ff;
+
+  --positive: #dfefcaff;
+  --warm: #fff9a5ff;
+  --negative: #b48b7dff;
+} */
+/*
+:root {
+--text: #4c5760ff;
+--cold: #93a8acff;
+--background: #d7ceb2ff;
+--warm: #a59e8cff;
+--positive: #2c871eff;
+--neutral: rgb(223, 213, 188);
+--negative: #f05d5eff;
+} */
+:root {
+  --border: rgb(163, 163, 163);
+  --neutral: rgb(209, 209, 209);
+  --light: #fcfcfcff;
+  --background: rgb(212, 242, 252);
+  --text: #4b4237ff;
+  --positive: rgb(0, 172, 14);
+  --warm: rgb(224, 224, 224);
+  --positive-light: rgb(168, 226, 172);
+  --negative: #ff495cff;
+  --title-font: 'Emblema One';
+  --body-font: 'Poppins';
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(var(--light), var(--background));
+  background-size: 100vw 100vh;
+  color: var(--text);
+  overflow-x: hidden;
+}
+body, button {
+  font-family: var(--body-font);
+}
+.App {
+  text-align: center;
+}
+.Navbar {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+}
+.NavbarTitle {
+  font-family: var(--title-font);
+}
+.AccountActions {
+  display: flex;
+}
+.TaskContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-width: 75vw;
+  align-items: center;
+  justify-items: right;
+}
+.TaskContainerList {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 75vw;
+  flex-direction: column;
+}
+.closeButton {
+  size: 32px 32px;
+  padding: 0;
+}
+.Checkbox {
+  display: flex;
+  align-items: center;
+}
+.Overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0004;
+}
+.InviteDropDown {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  margin-left: -100px;
+  width: 200px;
+}
+.EmptyTaskList {
+  align-self: center;
+}
+.FormTitle {
+  align-self: center;
+}
+.TaskTitle {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.TaskHeader {
+  display: flex;
+  justify-content: space-between;
+  justify-items:center;
+  align-items: center;
+  width: 100%;
+}
+.TaskHeaderRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.FormInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.FormInputs > input {
+  padding: 2px;
+  margin-top: 6px;
+}
+.FormActions {
+  display: flex;
+  padding: 10px 30px;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}
+.TaskActions {
+  display: flex;
+  align-self: flex-end;
+  justify-content:flex-end;
+  flex-wrap: wrap;
+}
+.TaskActions button {
+  margin: 5px;
+}
+.Task {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--text);
+  display: flex;
+  padding: 4px;
+  padding-left: 8px;
+  flex-direction: column;
+  min-height: 200px;
+  background: linear-gradient(var(--light), var(--neutral));
+  border-radius: 5px;
+  justify-content: space-between;
+}
+.TaskDone {
+  background: var(--positive-light);
+}
+.Form {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+}
+button {
+  background-color: var(--neutral);
+  transition: background-color 0.25s;
+  border-radius: 3px;
+  border-style: solid;
+  font-size: 20px;
+  min-width: 32px;
+  padding: 4px 4px;
+  border: 2px solid var(--border);
+}
+.positive {
+  background-color: var(--positive);
+}
+.negative {
+  background-color: var(--negative);
+}
+.arrow {
+  size: 20px 5px;
+}
+.expander {
+  padding: 4px;
+  background-color:#fff4;
+}
+.AppContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.AddTaskForm, .InviteUserForm {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background-color: var(--neutral);
+  align-items: space-between;
+  justify-content: space-between;
+}
+.DeleteTaskComponent {
+  border: 1px solid var(--border);
+}
+.DeleteTaskDialog {
+  display: flex;
+  background-color: var(--background);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.AddTaskFormTop, .InviteUserFormTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.AddTaskFormTopTitle, .InviteUserFormTopTitle {
+  margin-left: 8px;
+}
+.AddTaskFormBody, .InviteUserFormBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75%;
+}
+.AddTaskFormDescriptionInput,
+.AddTaskFormTitleInput,
+.InviteUserFormEmailInput {
+  resize: none;
+  font-family: var(--body-font);
+  width: 80%;
+}
+.AddTaskFormDescriptionInput {
+  height: 50%;
+}
+.Invite {
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  width: 200px;
+  background-color: var(--background);
+}
+
+@media screen and (min-width: 700px) {
+  .Navbar {
+    flex-direction: row;
+  }
+  .NavbarTitle {
+    font-size: 32px;
+  }
+}
+@media (pointer: coarse), (pointer: fine) {
+  .expander:hover {
+    background-color:#fff6;
+  }
+  .svgCheckbox:hover {
+    stroke: var(--warm)
+  }
+  button:hover {
+    background-color: var(--warm);
+  }
+}
